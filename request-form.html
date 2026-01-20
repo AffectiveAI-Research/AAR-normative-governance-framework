@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAR — Request Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            color: #1a3a1a;
+        }
+        
+        .header-box {
+            border: 3px solid #cc0000;
+            background-color: #f0fdf0;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header-box h1 {
+            color: #1a3a1a;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header-box p {
+            color: #1a3a1a;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        
+        .form-container {
+            border: 3px solid #cc0000;
+            background-color: #f0fdf0;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #1a3a1a;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .form-group .label-pt {
+            display: block;
+            color: #00a651;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #1a3a1a;
+            background-color: #ffffff;
+            color: #1a3a1a;
+            font-size: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            max-height: 100px;
+            resize: none;
+            overflow-y: scroll;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #00a651;
+        }
+        
+        .checkbox-group {
+            margin-top: 20px;
+        }
+        
+        .checkbox-group label {
+            display: block;
+            color: #1a3a1a;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .checkbox-group .label-pt {
+            display: block;
+            color: #00a651;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .checkbox-option {
+            margin-bottom: 8px;
+        }
+        
+        .checkbox-option input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .checkbox-option label {
+            display: inline;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        
+        .radio-group {
+            margin-top: 15px;
+        }
+        
+        .radio-option {
+            margin-bottom: 8px;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .radio-option label {
+            display: inline;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        
+        .submit-btn {
+            background-color: #00a651;
+            color: #ffffff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #008a43;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .back-link a {
+            color: #1a3a1a;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #cc0000;
+        }
+        
+        footer {
+            background-color: #f0fdf0;
+            border: 2px solid #cc0000;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            color: #1a3a1a;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <h1>Request Information</h1>
+        <p>Solicite Informação</p>
+    </div>
+    
+    <div class="form-container">
+        <form id="requestForm" action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <span class="label-pt">Nome</span>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <span class="label-pt">Empresa / Organização</span>
+                <input type="text" id="company" name="company" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <span class="label-pt">E-mail</span>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <span class="label-pt">Telefone</span>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="checkbox-group">
+                <label>Which IP / Framework are you interested in?</label>
+                <span class="label-pt">Qual PI / Framework você tem interesse?</span>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-core" name="framework" value="AAR Core">
+                    <label for="aar-core">AAR Core</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-hard-core" name="framework" value="AAR Hard Core">
+                    <label for="aar-hard-core">AAR Hard Core</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-driver" name="framework" value="AAR Driver">
+                    <label for="aar-driver">AAR Driver</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-hard-driver" name="framework" value="AAR Hard Driver">
+                    <label for="aar-hard-driver">AAR Hard Driver</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-collab" name="framework" value="AAR Collaborative Agents">
+                    <label for="aar-collab">AAR Collaborative Agents</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="aar-decision" name="framework" value="AAR Hard Decision">
+                    <label for="aar-decision">AAR Hard Decision</label>
+                </div>
+            </div>
+            
+            <div class="radio-group">
+                <label>Interest Type</label>
+                <span class="label-pt">Tipo de Interesse</span>
+                <div class="radio-option">
+                    <input type="radio" id="pilot" name="interest" value="Pilot License" required>
+                    <label for="pilot">Pilot License / Licença Piloto</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="license" name="interest" value="Full License" required>
+                    <label for="license">Full License / Licença Completa</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="general-info" name="interest" value="General Information" required>
+                    <label for="general-info">General Information / Informação Geral</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="use-case">Use Case</label>
+                <span class="label-pt">Caso de Uso</span>
+                <textarea id="use-case" name="use-case" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="problem">Problem Presented</label>
+                <span class="label-pt">Problema Apresentado</span>
+                <textarea id="problem" name="problem" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="questions">Specific Questions / Doubts</label>
+                <span class="label-pt">Dúvidas Pontuais</span>
+                <textarea id="questions" name="questions"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit / Enviar</button>
+        </form>
+    </div>
+    
+    <div class="back-link">
+        <a href="index.html">← Back to Main Page / Voltar à Página Principal</a>
+    </div>
+    
+    <footer>
+        <p>© 2026. AAR Framework. All rights reserved. Protected by intellectual property rights.<br>
+        Patents deposited with INPI Brazil. Unauthorized use, reproduction or distribution prohibited.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('requestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! Your request has been received.\n\nObrigado pelo seu interesse! Sua solicitação foi recebida.');
+        });
+    </script>
+</body>
+</html>
