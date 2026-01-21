@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AAR — Automatic Alignment Regulation</title>
+
+  <!-- Disable automatic translation (browser / Google Translate) -->
+  <meta name="google" content="notranslate">
 
   <!-- Fonts (Institutional + Script for initials only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,11 +37,12 @@
       font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
       padding: 22px;
+      translate: no;
     }
 
     /* Initial letters in the full name (Alignment / Regulation) */
     .init-accent {
-      color: var(--accent);
+      color: var(--accent) !important;
       font-weight: 800;
     }
 
@@ -53,12 +57,14 @@
       font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       font-weight: 800;
       letter-spacing: 0.02em;
+      color: var(--text) !important;
     }
     .aar-a2, .aar-r {
       font-family: "Dancing Script", cursive;
       font-weight: 700;
       letter-spacing: 0;
       margin-left: 0px;
+      color: var(--accent) !important;
     }
 
     .container {
@@ -80,7 +86,7 @@
     }
 
     nav a {
-      color: var(--text);
+      color: var(--text) !important;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
