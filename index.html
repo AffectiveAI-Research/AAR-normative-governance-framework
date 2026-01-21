@@ -36,6 +36,12 @@
       padding: 22px;
     }
 
+    /* Initial letters in the full name (Alignment / Regulation) */
+    .init-accent {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
     /* AAR initials styling: first A normal; second A + R in script */
     .aar-mark {
       display: inline-flex;
@@ -90,9 +96,20 @@
     }
 
     .cta {
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      border: 1px solid var(--accent) !important;
+      color: var(--text) !important;
       background: rgba(176, 0, 0, 0.06);
+    }
+
+    .cta:hover {
+      background: rgba(176, 0, 0, 0.12);
+      color: var(--text) !important;
+    }
+
+    /* Keep focus outline institutional (avoid browser blue) */
+    nav a:focus {
+      outline: 2px solid rgba(176, 0, 0, 0.35);
+      outline-offset: 2px;
     }
 
     .cta:hover {
@@ -243,7 +260,7 @@
     <div class="content-box">
       <section id="english">
         <h1 class="main-title">
-          Automatic Alignment Regulation (
+          Automatic <span class="init-accent">A</span>lignment <span class="init-accent">R</span>egulation (
           <span class="aar-mark">
             <span class="aar-a1">A</span><span class="aar-a2">A</span><span class="aar-r">R</span>
           </span>
