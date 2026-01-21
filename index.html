@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AAR — Automatic Alignment Regulation</title>
+
+  <!-- Fonts (Institutional + Script for initials only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #ffffff;
@@ -25,9 +31,28 @@
 
     body {
       background: var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
       padding: 22px;
+    }
+
+    /* AAR initials styling: first A normal; second A + R in script */
+    .aar-mark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      line-height: 1;
+    }
+    .aar-a1 {
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .aar-a2, .aar-r {
+      font-family: "Dancing Script", cursive;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-left: 0px;
     }
 
     .container {
@@ -217,7 +242,13 @@
 
     <div class="content-box">
       <section id="english">
-        <h1 class="main-title"><span class="accent">A</span>utomatic Alignment Regulation (AAR)</h1>
+        <h1 class="main-title">
+          Automatic Alignment Regulation (
+          <span class="aar-mark">
+            <span class="aar-a1">A</span><span class="aar-a2">A</span><span class="aar-r">R</span>
+          </span>
+          )
+        </h1>
         <p class="subtitle">Normative Governance Framework</p>
 
         <h2>Institutional Presentation of the Framework Family</h2>
@@ -250,6 +281,20 @@
         <p>Rather than focusing on model performance, <strong>AAR Core performs normative evaluation</strong> of the generated response <strong>before release</strong>, being able to determine reformulation, containment, or blocking according to parameters defined by the institution within the framework’s normative specification.</p>
 
         <p>AAR does not evaluate business merit, does not replace decision-making agents, and does not constitute certification. Its role is structural: to establish <strong>pre-execution governance</strong> over generated responses, helping ensure that only outputs compatible with defined normative criteria are released for use.</p>
+
+        <!-- Agentic Block (EN) -->
+        <h3>Agentic Systems &amp; Pre-Release Governance</h3>
+
+        <p>Modern automation is evolving beyond traditional <strong>RPA (Robotic Process Automation)</strong>. In <strong>agentic process automation</strong>, autonomous agents coordinate workflows, call APIs, and trigger downstream actions under increasingly complex operational conditions.</p>
+
+        <p>In these environments, an AI output is not only “text” — it may become an <strong>execution step</strong>. This increases exposure to cascading failures, regulatory risk, and irreversible operational impact.</p>
+
+        <ul>
+          <li><strong>AAR role:</strong> a pre-release normative decision gate before an output is released or executed.</li>
+          <li><strong>Control actions:</strong> allow, contain, block, or require reformulation based on governance parameters.</li>
+          <li><strong>Applies to agentic stacks:</strong> multi-agent orchestration, RPA + APIs, and human-in-the-loop pipelines.</li>
+          <li><strong>Model-agnostic:</strong> does not depend on vendor, architecture, or model provider.</li>
+        </ul>
 
         <h3>Minimum Definitions</h3>
 
@@ -328,7 +373,13 @@
       <hr class="divider" />
 
       <section id="portuguese">
-        <h1 class="main-title"><span class="accent">A</span>utomatic Alignment Regulation (AAR)</h1>
+        <h1 class="main-title">
+          Automatic Alignment Regulation (
+          <span class="aar-mark">
+            <span class="aar-a1">A</span><span class="aar-a2">A</span><span class="aar-r">R</span>
+          </span>
+          )
+        </h1>
         <p class="subtitle">Framework de Governança Normativa</p>
 
         <h2>Apresentação institucional da família</h2>
@@ -361,6 +412,20 @@
         <p>Em vez de focar na performance do modelo, o <strong>AAR Core realiza avaliação normativa</strong> da resposta gerada <strong>antes da liberação</strong>, podendo determinar reformulação, contenção ou bloqueio conforme parâmetros definidos pela instituição no âmbito da especificação normativa do framework.</p>
 
         <p>O AAR não avalia mérito de negócio, não substitui agentes decisórios e não constitui certificação. Seu papel é estrutural: estabelecer <strong>governança pré-execução</strong> sobre respostas geradas, ajudando a assegurar que apenas outputs compatíveis com critérios normativos definidos sejam liberados para uso.</p>
+
+        <!-- Agentic Block (PT) -->
+        <h3>Sistemas Agênticos &amp; Governança Pré-Liberação</h3>
+
+        <p>A automação moderna está evoluindo além do <strong>RPA (Robotic Process Automation)</strong> tradicional. Em arquiteturas <strong>agênticas</strong>, agentes autônomos coordenam fluxos, chamam APIs e acionam etapas downstream sob condições operacionais cada vez mais complexas.</p>
+
+        <p>Nesses ambientes, o output de IA não é apenas “texto” — pode tornar-se um <strong>passo de execução</strong>. Isso aumenta a exposição a efeitos em cascata, risco regulatório e impacto operacional irreversível.</p>
+
+        <ul>
+          <li><strong>Papel do AAR:</strong> gate normativo pré-liberação antes de liberar ou executar um output.</li>
+          <li><strong>Ações de controle:</strong> liberar, conter, bloquear ou exigir reformulação conforme parâmetros de governança.</li>
+          <li><strong>Aplicável a stacks agênticos:</strong> orquestração multiagente, RPA + APIs e pipelines com humano no loop.</li>
+          <li><strong>Agnóstico de modelo:</strong> independe de fornecedor, arquitetura ou provedor do modelo.</li>
+        </ul>
 
         <h3>Definições Mínimas</h3>
 
