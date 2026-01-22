@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AAR — Automatic Alignment Regulation</title>
+
+  <!-- Disable automatic translation (browser / Google Translate) -->
   <meta name="google" content="notranslate">
 
+  <!-- Fonts (Institutional + Script for initials only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
@@ -18,22 +22,56 @@
       --text: #101418;
       --muted: #4b5563;
       --accent: #b00000;
-      --border: #b00000;
+      --border: #d9dde3;
       --radius: 14px;
       --maxw: 980px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       background: var(--bg);
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text) !important;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
       padding: 22px;
       translate: no;
     }
 
-    .container { max-width: var(--maxw); margin: 0 auto; }
+    /* Initial letters in the full name (Alignment / Regulation) */
+    .init-accent {
+      color: var(--accent) !important;
+      font-weight: 800;
+    }
+
+    /* AAR initials styling: first A normal; second A + R in script */
+    .aar-mark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      line-height: 1;
+    }
+    .aar-a1 {
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text) !important;
+    }
+    .aar-a2, .aar-r {
+      font-family: "Dancing Script", cursive;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-left: 0px;
+      color: var(--accent) !important;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
 
     nav {
       background: var(--surface-2);
@@ -48,23 +86,41 @@
       margin-bottom: 22px;
     }
 
-    nav a,
-    nav a:visited,
-    nav a:active,
-    nav a:focus,
-    nav a:focus-visible {
+    nav a {
       color: var(--text) !important;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
       padding: 6px 10px;
       border-radius: 10px;
-      outline: none;
+      transition: background 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
     }
 
-    nav a.cta {
+    nav a:hover {
+      background: rgba(176, 0, 0, 0.08);
+      color: var(--accent);
+    }
+
+    .cta {
       border: 1px solid var(--accent) !important;
+      color: var(--text) !important;
       background: rgba(176, 0, 0, 0.06);
+    }
+
+    .cta:hover {
+      background: rgba(176, 0, 0, 0.12);
+      color: var(--text) !important;
+    }
+
+    /* Keep focus outline institutional (avoid browser blue) */
+    nav a:focus {
+      outline: 2px solid rgba(176, 0, 0, 0.35);
+      outline-offset: 2px;
+    }
+
+    .cta:hover {
+      background: rgba(176, 0, 0, 0.12);
     }
 
     .content-box {
@@ -77,13 +133,15 @@
 
     .main-title {
       font-size: 34px;
-      font-weight: 800;
+      font-weight: 760;
       letter-spacing: -0.02em;
       text-align: center;
       margin-bottom: 8px;
     }
 
-    .init-accent { color: var(--accent) !important; }
+    .main-title .accent {
+      color: var(--accent);
+    }
 
     .subtitle {
       text-align: center;
@@ -92,11 +150,80 @@
       margin-bottom: 28px;
     }
 
-    h2 { font-size: 22px; margin-top: 28px; margin-bottom: 10px; font-weight: 700; }
-    h3 { font-size: 18px; margin-top: 20px; margin-bottom: 8px; font-weight: 700; }
-    p { font-size: 16px; margin-bottom: 12px; }
-    ul { margin-left: 20px; margin-bottom: 14px; }
-    li { font-size: 16px; margin-bottom: 10px; }
+    h2 {
+      font-size: 22px;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .family-list {
+      margin: 10px 0 16px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fafbfc;
+      line-height: 1.6;
+    }
+
+    .principle {
+      font-style: italic;
+      font-weight: 650;
+      margin-top: 12px;
+      color: var(--text);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 30px 0;
+    }
+
+    .home-button {
+      text-align: center;
+      margin-top: 26px;
+    }
+
+    .home-button a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fafbfc;
+      transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+    }
+
+    .home-button a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(176, 0, 0, 0.06);
+    }
 
     footer {
       margin-top: 18px;
@@ -109,6 +236,22 @@
       font-size: 12px;
       line-height: 1.55;
     }
+
+    .note-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .note-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .content-box { padding: 28px 20px; }
+      .main-title { font-size: 28px; }
+    }
   </style>
 </head>
 
@@ -117,56 +260,273 @@
     <nav id="top">
       <a href="#english">English</a>
       <a href="#portuguese">Português</a>
-      <a class="cta" href="#">Request Pilot Information</a>
-      <a class="cta" href="#">Solicitar Piloto</a>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdlDxF9cItnGuC2prouIfzurynBjI_1byXRUBCcAjAE6os7EQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Request Pilot Information</a>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdlDxF9cItnGuC2prouIfzurynBjI_1byXRUBCcAjAE6os7EQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Solicitar Piloto</a>
     </nav>
 
     <div class="content-box">
       <section id="english">
-        <h1 class="main-title" translate="no">
-          Automatic <span class="init-accent">A</span>lignment <span class="init-accent">R</span>egulation (AAR)
+        <h1 class="main-title">
+          Automatic <span class="init-accent">A</span>lignment <span class="init-accent">R</span>egulation (
+          <span class="aar-mark">
+            <span class="aar-a1">A</span><span class="aar-a2">A</span><span class="aar-r">R</span>
+          </span>
+          )
         </h1>
         <p class="subtitle">Normative Governance Framework</p>
 
-        <p><strong>AAR (Automatic Alignment Regulation)</strong> is an independent, institution-defined normative governance framework for Artificial Intelligence (AI) systems and automated decision systems.</p>
+        <h2>Institutional Presentation of the Framework Family</h2>
 
-        <p>Its focus is <strong>pre-execution governance</strong>: establishing authority limits, assessing deviation against predefined normative parameters, and executing graduated containment in critical contexts — before outputs are released or system-mediated decisions are executed.</p>
+        <p><strong>AAR (Automatic Alignment Regulation)</strong> is an independent normative governance framework for Artificial Intelligence (AI) systems and automated decision systems.</p>
 
-        <p>AAR does not evaluate business merit, does not replace human or institutional decision-makers, and does not constitute certification. Its role is structural: to establish <strong>pre-execution governance</strong> over generated responses.</p>
+        <p>Its focus is <strong>pre-execution governance</strong>: establishing authority limits, assessing deviation, and executing graduated containment in critical contexts — before outputs or decisions produce operational effect.</p>
 
-        <h3>Agentic Context</h3>
-        <p>In these environments, an AI output is not only “text” — it may directly or indirectly become an <strong>execution step</strong>.</p>
+        <p>AAR is not a “ready-to-use” software product. Its use is conditional upon licensing.</p>
+
+        <h3>Framework Lines (AAR Family)</h3>
+
+        <div class="family-list">
+          AAR Core<br>
+          AAR Hard Core<br>
+          AAR Driver<br>
+          AAR Hard Driver<br>
+          AAR Collaborative Agents<br>
+          AAR Hard Decision
+        </div>
+
+        <p class="principle">Institutional principle: governance before implementation.</p>
+
+        <h2>Use Cases</h2>
+
+        <h3>Overview</h3>
+
+        <p>The AAR framework is intended for contexts in which responses generated by AI systems may influence, guide, or precede decisions with <strong>material, legal, operational, or security impact</strong>.</p>
+
+        <p>Rather than focusing on model performance, <strong>AAR Core performs normative evaluation</strong> of the generated response <strong>before release</strong>, being able to determine reformulation, containment, or blocking according to parameters defined by the institution within the framework’s normative specification.</p>
+
+        <p>AAR does not evaluate business merit, does not replace decision-making agents, and does not constitute certification. Its role is structural: to establish <strong>pre-execution governance</strong> over generated responses, helping ensure that only outputs compatible with defined normative criteria are released for use.</p>
+
+        <!-- Agentic Block (EN) -->
+        <h3>Agentic Systems &amp; Pre-Release Governance</h3>
+
+        <p>Modern automation is evolving beyond traditional <strong>RPA (Robotic Process Automation)</strong>. In <strong>agentic process automation</strong>, autonomous agents coordinate workflows, call APIs, and trigger downstream actions under increasingly complex operational conditions.</p>
+
+        <p>In these environments, an AI output is not only “text” — it may become an <strong>execution step</strong>. This increases exposure to cascading failures, regulatory risk, and irreversible operational impact.</p>
 
         <ul>
-          <li><strong>Model-agnostic:</strong> does not depend on vendor, architecture, or model provider, provided that a controllable pre-release interface exists.</li>
+          <li><strong>AAR role:</strong> a pre-release normative decision gate before an output is released or executed.</li>
+          <li><strong>Control actions:</strong> allow, contain, block, or require reformulation based on governance parameters.</li>
+          <li><strong>Applies to agentic stacks:</strong> multi-agent orchestration, RPA + APIs, and human-in-the-loop pipelines.</li>
+          <li><strong>Model-agnostic:</strong> does not depend on vendor, architecture, or model provider.</li>
         </ul>
+
+        <h3>Minimum Definitions</h3>
+
+        <p><strong>Release:</strong> making a generated response available to a user, a downstream flow, or an automated system.</p>
+        <p><strong>Reformulation:</strong> requirement that the response be regenerated or rewritten under normative constraints before any release.</p>
+        <p><strong>Containment:</strong> restriction of the response to controlled conditions before release.</p>
+        <p><strong>Blocking:</strong> prevention of release when normative criteria are not met.</p>
+        <p><strong>Normative parameters:</strong> explicit criteria defined by the institution (legal, ethical, organizational, operational, security) within the AAR framework.</p>
+
+        <h3>Application Contexts</h3>
+
+        <p>AAR is applicable in scenarios where the simple generation of a technically correct response is not sufficient, and where risk is associated with the form, timing, and conditions under which the response is released without prior governance.</p>
+
+        <p>Typical application contexts include:</p>
+
+        <ul>
+          <li>AI-based decision support systems in regulated environments, in which generated responses must respect legal, ethical, or organizational limits before being made available to human users or automated systems.</li>
+
+          <li>Corporate governance and internal AI control, enabling organizations to apply explicit normative criteria to determine which responses may or may not be released, supporting consistency with internal policies, risk thresholds, and accountability requirements.</li>
+
+          <li>Human-in-the-loop systems and hybrid models, in which AI-generated responses serve to inform, but not replace, human judgment. AAR Core maintains generation, validation, and release as explicit and auditable stages.</li>
+
+          <li>Risk-sensitive operational domains (e.g., compliance, finance, security, internal assessments, high-impact flows), in which allowing a response to reach the user without prior normative validation may generate material consequences.</li>
+
+          <li>Embedded and cyber-physical systems, in which AI outputs may influence or trigger decisions that result in actions in the physical or operational world, requiring pre-execution governance mechanisms to reduce the probability of error propagation into actions.</li>
+        </ul>
+
+        <h3>Controlled Evaluation and Complementary Modules</h3>
+
+        <p>In testing, validation, or controlled deployment environments, AAR Core can be used in conjunction with other specialized modules of the AAR family that provide complementary governance functions. In these configurations, the Core remains the component responsible for normative evaluation and for demanding reformulation, containment, or blocking before release.</p>
+
+        <p>In these configurations, the framework enables:</p>
+
+        <ul>
+          <li>Pre-execution blocking or containment of responses that would violate defined normative parameters, reducing the probability that errors propagate to final decisions, actions, or recommendations.</li>
+
+          <li>Generation of structured governance logs, recording the conditions under which responses were reformulated, contained, or blocked, including relevant contextual, operational, and normative metadata.</li>
+
+          <li>Identification of recurring failure patterns, such as heuristic drift, instability in certain contexts, or degradation of alignment over successive interactions, without access to the model’s internal mechanisms.</li>
+        </ul>
+
+        <p>These logs provide normative and operational evidence about when, in what context, and under what conditions certain responses needed to be reformulated, contained, or blocked, without making explicit the model’s internal mechanistic causality.</p>
+
+        <h3>When Not to Use</h3>
+
+        <p>AAR should not be understood as:</p>
+
+        <ul>
+          <li>Performance benchmark, accuracy optimizer, or fine-tuning method.</li>
+          <li>Model interpretability framework or analysis of internal causal mechanisms.</li>
+          <li>Compliance certification scheme or guarantee of regulatory approval.</li>
+          <li>Substitute for institutional decision-making, accountability, or governance ownership.</li>
+        </ul>
+
+        <h2>Pilot License</h2>
+
+        <p>AAR may be made available under a limited pilot license, intended exclusively for testing, validation, or controlled evaluation environments.</p>
+
+        <p>Pilot licenses are governed by a formal opening agreement, which defines scope, duration, and eligibility criteria. At the end of the established pilot period, formalization of a pilot closure is mandatory, regardless of discontinuation of use or intention to continue under a formal license.</p>
+
+        <p>Continued use after the pilot is subject to a separate licensing process, with clearly defined bases, conditions, and effective dates.</p>
+
+        <p>The pilot license does not constitute commercial authorization, certification, or permanent right of use.</p>
+
+        <h3>Pilot License Request</h3>
+
+        <p>Organizations interested in evaluating the AAR framework under controlled conditions may submit a pilot license request using the form below:</p>
+
+        <p><a class="note-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdlDxF9cItnGuC2prouIfzurynBjI_1byXRUBCcAjAE6os7EQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Open the AAR Core Pilot Request Form</a></p>
+
+        <div class="home-button">
+          <a href="#top">Back to Top</a>
+        </div>
       </section>
 
-      <hr style="border:none;border-top:1px solid var(--border);margin:30px 0;" />
+      <hr class="divider" />
 
       <section id="portuguese">
-        <h1 class="main-title" translate="no">
-          Automatic <span class="init-accent">A</span>lignment <span class="init-accent">R</span>egulation (AAR)
+        <h1 class="main-title">
+          Automatic Alignment Regulation (
+          <span class="aar-mark">
+            <span class="aar-a1">A</span><span class="aar-a2">A</span><span class="aar-r">R</span>
+          </span>
+          )
         </h1>
         <p class="subtitle">Framework de Governança Normativa</p>
 
-        <p><strong>AAR (Automatic Alignment Regulation)</strong> é um framework independente de governança normativa, definido institucionalmente, para sistemas de Inteligência Artificial (IA) e sistemas automatizados de decisão.</p>
+        <h2>Apresentação institucional da família</h2>
 
-        <p>Seu foco é a <strong>governança pré-execução</strong>: estabelecer limites de autoridade, avaliar desvios com base em parâmetros normativos previamente definidos e executar contenção graduada em contextos críticos — antes que outputs sejam liberados ou decisões mediadas por sistemas sejam executadas.</p>
+        <p><strong>AAR (Automatic Alignment Regulation)</strong> é um framework independente de governança normativa para sistemas de Inteligência Artificial (IA) e sistemas automatizados de decisão.</p>
 
-        <p>O AAR não avalia mérito de negócio, não substitui decisores humanos ou institucionais e não constitui certificação. Seu papel é estrutural: estabelecer governança pré-execução sobre respostas geradas.</p>
+        <p>Seu foco é <strong>governança pré-execução</strong>: estabelecer limites de autoridade, avaliar desvio e executar contenção graduada em contextos críticos — antes que outputs ou decisões produzam efeito operacional.</p>
 
-        <h3>Contexto Agêntico</h3>
-        <p>Nesses ambientes, um output de IA não é apenas “texto” — ele pode, direta ou indiretamente, tornar-se uma <strong>etapa de execução</strong>.</p>
+        <p>O AAR não é um software “pronto”. Seu uso é condicionado a licenciamento.</p>
+
+        <h3>Linhas do framework (família AAR)</h3>
+
+        <div class="family-list">
+          AAR Core<br>
+          AAR Hard Core<br>
+          AAR Driver<br>
+          AAR Hard Driver<br>
+          AAR Collaborative Agents<br>
+          AAR Hard Decision
+        </div>
+
+        <p class="principle">Princípio institucional: governança antes da implementação.</p>
+
+        <h2>Casos de Uso</h2>
+
+        <h3>Visão Geral</h3>
+
+        <p>O framework AAR é destinado a contextos nos quais respostas geradas por sistemas de IA podem influenciar, orientar ou anteceder decisões com <strong>impacto material, legal, operacional ou de segurança</strong>.</p>
+
+        <p>Em vez de focar na performance do modelo, o <strong>AAR Core realiza avaliação normativa</strong> da resposta gerada <strong>antes da liberação</strong>, podendo determinar reformulação, contenção ou bloqueio conforme parâmetros definidos pela instituição no âmbito da especificação normativa do framework.</p>
+
+        <p>O AAR não avalia mérito de negócio, não substitui agentes decisórios e não constitui certificação. Seu papel é estrutural: estabelecer <strong>governança pré-execução</strong> sobre respostas geradas, ajudando a assegurar que apenas outputs compatíveis com critérios normativos definidos sejam liberados para uso.</p>
+
+        <!-- Agentic Block (PT) -->
+        <h3>Sistemas Agênticos &amp; Governança Pré-Liberação</h3>
+
+        <p>A automação moderna está evoluindo além do <strong>RPA (Robotic Process Automation)</strong> tradicional. Em arquiteturas <strong>agênticas</strong>, agentes autônomos coordenam fluxos, chamam APIs e acionam etapas downstream sob condições operacionais cada vez mais complexas.</p>
+
+        <p>Nesses ambientes, o output de IA não é apenas “texto” — pode tornar-se um <strong>passo de execução</strong>. Isso aumenta a exposição a efeitos em cascata, risco regulatório e impacto operacional irreversível.</p>
 
         <ul>
-          <li><strong>Model-agnostic:</strong> não depende de fornecedor, arquitetura ou provedor de modelo, desde que exista uma interface de pré-liberação controlável.</li>
+          <li><strong>Papel do AAR:</strong> gate normativo pré-liberação antes de liberar ou executar um output.</li>
+          <li><strong>Ações de controle:</strong> liberar, conter, bloquear ou exigir reformulação conforme parâmetros de governança.</li>
+          <li><strong>Aplicável a stacks agênticos:</strong> orquestração multiagente, RPA + APIs e pipelines com humano no loop.</li>
+          <li><strong>Agnóstico de modelo:</strong> independe de fornecedor, arquitetura ou provedor do modelo.</li>
         </ul>
+
+        <h3>Definições Mínimas</h3>
+
+        <p><strong>Liberação:</strong> disponibilização de uma resposta gerada para um usuário, um fluxo downstream ou um sistema automatizado.</p>
+        <p><strong>Reformulação:</strong> exigência de que a resposta seja regenerada ou reescrita sob restrições normativas antes de qualquer liberação.</p>
+        <p><strong>Contenção:</strong> restrição da resposta a condições controladas antes da liberação.</p>
+        <p><strong>Bloqueio:</strong> impedimento de liberação quando critérios normativos não são atendidos.</p>
+        <p><strong>Parâmetros normativos:</strong> critérios explícitos definidos pela instituição (legais, éticos, organizacionais, operacionais, de segurança) no âmbito do framework AAR.</p>
+
+        <h3>Contextos de Aplicação</h3>
+
+        <p>O AAR é aplicável em cenários nos quais a simples geração de uma resposta tecnicamente correta não é suficiente, e onde o risco está associado à forma, ao momento e às condições sob as quais a resposta é liberada sem governança prévia.</p>
+
+        <p>Contextos típicos de aplicação incluem:</p>
+
+        <ul>
+          <li>Sistemas de apoio à decisão baseados em IA em ambientes regulados, nos quais respostas geradas precisam respeitar limites legais, éticos ou organizacionais antes de serem disponibilizadas a usuários humanos ou sistemas automatizados.</li>
+
+          <li>Governança corporativa e controle interno de IA, permitindo que organizações apliquem critérios normativos explícitos para determinar quais respostas podem ou não ser liberadas, apoiando consistência com políticas internas, limiares de risco e requisitos de responsabilização.</li>
+
+          <li>Sistemas com humano no loop e modelos híbridos, nos quais respostas geradas por IA servem para informar, mas não substituir, o julgamento humano. O AAR Core mantém geração, validação e liberação como etapas explícitas e auditáveis.</li>
+
+          <li>Domínios operacionais sensíveis a risco (ex.: compliance, finanças, segurança, avaliações internas, fluxos de alto impacto), nos quais permitir que uma resposta alcance o usuário sem validação normativa prévia pode gerar consequências materiais.</li>
+
+          <li>Sistemas embarcados e ciberfísicos, nos quais outputs de IA podem influenciar ou acionar decisões que resultam em ações no mundo físico ou operacional, exigindo mecanismos de governança pré-execução para reduzir a probabilidade de propagação de erros em ações.</li>
+        </ul>
+
+        <h3>Avaliação Controlada e Módulos Complementares</h3>
+
+        <p>Em ambientes de teste, validação ou implantação controlada, o AAR Core pode ser utilizado em conjunto com outros módulos especializados da família AAR que fornecem funções complementares de governança. Nessas configurações, o Core permanece como o componente responsável pela avaliação normativa e por demandar reformulação, contenção ou bloqueio antes da liberação.</p>
+
+        <p>Nessas configurações, o framework possibilita:</p>
+
+        <ul>
+          <li>Bloqueio ou contenção pré-execução de respostas que violariam parâmetros normativos definidos, reduzindo a probabilidade de que erros se propaguem para decisões, ações ou recomendações finais.</li>
+
+          <li>Geração de logs estruturados de governança, registrando as condições sob as quais respostas foram reformuladas, contidas ou bloqueadas, incluindo metadados contextuais, operacionais e normativos relevantes.</li>
+
+          <li>Identificação de padrões recorrentes de falha, como drift heurístico, instabilidade em determinados contextos ou degradação de alinhamento ao longo de interações sucessivas, sem acesso aos mecanismos internos do modelo.</li>
+        </ul>
+
+        <h3>Quando Não Usar</h3>
+
+        <p>O AAR não deve ser entendido como:</p>
+
+        <ul>
+          <li>Benchmark de performance, otimizador de acurácia ou método de fine-tuning.</li>
+          <li>Framework de interpretabilidade do modelo ou análise de mecanismos causais internos.</li>
+          <li>Esquema de certificação de compliance ou garantia de aprovação regulatória.</li>
+          <li>Substituto para decisão institucional, responsabilização ou propriedade de governança.</li>
+        </ul>
+
+        <h2>Licença Piloto</h2>
+
+        <p>O AAR pode ser disponibilizado sob licença piloto limitada, destinada exclusivamente a ambientes de teste, validação ou avaliação controlada.</p>
+
+        <p>As licenças piloto são regidas por um contrato formal de abertura, que define escopo, duração e critérios de elegibilidade. Ao término do período piloto estabelecido, é obrigatória a formalização de um encerramento de piloto, independentemente da descontinuação do uso ou da intenção de continuidade sob licença formal.</p>
+
+        <p>A continuidade de uso após o piloto está sujeita a um processo de licenciamento separado, com bases, condições e datas de vigência claramente definidas.</p>
+
+        <p>A licença piloto não constitui autorização comercial, certificação ou direito permanente de uso.</p>
+
+        <h3>Solicitação de Licença Piloto</h3>
+
+        <p>Organizações interessadas em avaliar o framework AAR sob condições controladas podem submeter uma solicitação utilizando o formulário abaixo:</p>
+
+        <p><a class="note-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdlDxF9cItnGuC2prouIfzurynBjI_1byXRUBCcAjAE6os7EQ/viewform?usp=publish-editor" target="_blank" rel="noopener">Abrir Formulário de Solicitação de Piloto</a></p>
+
+        <div class="home-button">
+          <a href="#top">Voltar ao topo</a>
+        </div>
       </section>
     </div>
 
     <footer>
-      © 2026. AAR Framework. All rights reserved. Protected by intellectual property rights.
+      © 2026. AAR Framework. All rights reserved. Protected by intellectual property rights.<br />
+      Patents deposited with INPI Brazil. Unauthorized use, reproduction, or distribution prohibited.
     </footer>
   </div>
 </body>
